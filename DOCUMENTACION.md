@@ -10,7 +10,7 @@
 
 Un **hash** es una función criptográfica que toma una entrada de cualquier tamaño y produce una salida de tamaño fijo (en este caso, 256 bits con SHA-256). Las características principales son:
 
-- **Determinístico**: La misma entrada siempre produce el mismo hash
+- **Determinístico**: La misma entrada siempre produce el mismo hash    
 - **Irreversible**: No se puede obtener la entrada original desde el hash
 - **Efecto avalancha**: Un pequeño cambio en la entrada cambia completamente el hash
 - **Resistente a colisiones**: Es prácticamente imposible encontrar dos entradas diferentes con el mismo hash
