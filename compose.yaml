@@ -1,0 +1,44 @@
+version: '3.8'
+
+
+services:
+  blockchain-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blockchain-demo
+    ports:
+      - "8080:8080"
+    volumes:
+      # Persistir base de datos SQLite fuera del contenedor
+      - ./data:/app/data
+    environment:
+      # Sobrescribir URL de base de datos para usar volumen persistente
+      - SPRING_DATASOURCE_URL=jdbc:sqlite:/app/data/blockchain.db
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/api/blocks"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - leocoin-network
+
+  leocoin-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: leocoin-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      blockchain-api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - leocoin-network
+
+networks:
+  leocoin-network:
+    driver: bridge

@@ -1,0 +1,10 @@
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/DemoApplication.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/config/SqliteConfig.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/controller/BlockchainController.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/dto/AddBlockRequest.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/dto/BlockchainVerificationResult.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/dto/ModifyBlockRequest.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/entity/Block.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/repository/BlockRepository.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/service/BlockchainService.java
+/home/soul/Documentos/demo/src/main/java/com/blockchain/demo/util/HashUtil.java
